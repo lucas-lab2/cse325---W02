@@ -1,0 +1,64 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+/* ------------------------------------------------------------------
+   Form controls: give text room so it is never jammed against the border.
+   Applies to every input, select and textarea in the app (Create, Edit,
+   Search/Filter, etc.). Checkboxes, radios, buttons, file and range
+   inputs are excluded because padding would distort them.
+   ------------------------------------------------------------------ */
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="file"]):not([type="range"]):not([type="hidden"]):not([type="image"]),
+textarea,
+.form-control {
+  padding: 0.5rem 0.75rem;
+  max-width: 100%;
+}
+
+/* Selects keep extra room on the right for the drop-down arrow. */
+select,
+.form-select {
+  padding: 0.5rem 2.25rem 0.5rem 0.75rem;
+  max-width: 100%;
+}
+
+textarea {
+  min-height: 6rem;
+}
+
+/* Plain (non-Bootstrap) controls should still span their container on small screens. */
+@media (max-width: 575.98px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="file"]):not([type="range"]):not([type="hidden"]):not([type="image"]),
+  select,
+  textarea {
+    width: 100%;
+  }
+}
